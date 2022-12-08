@@ -42,8 +42,8 @@ def get_dW(T: int, random_state: Optional[int] = None) -> np.ndarray:
     Optional random_state to reproduce results.
     """
     np.random.seed(random_state)
-    print("random_state")
-    print(np.random.get_state())
+    #print("random_state")
+    #print(np.random.get_state())
     return np.random.normal(0.0, 1.0, T)
 
 
