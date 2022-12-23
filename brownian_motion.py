@@ -35,16 +35,16 @@ def get_corr_dW_matrix(
     return np.asarray(dWs).T
 
 
-def get_dW(T: int, random_state: Optional[int] = None) -> np.ndarray:
+def get_dW(N: int, T: int, random_state: Optional[int] = None) -> np.ndarray:
     """
-    Sample T times from a normal distribution,
+    Sample T times from a normal distribution for N simulations
     to simulate discrete increments (dW) of a Brownian Motion.
     Optional random_state to reproduce results.
     """
     np.random.seed(random_state)
     #print("random_state")
     #print(np.random.get_state())
-    return np.random.normal(0.0, 1.0, T)
+    return np.random.normal(0.0, 1.0, (N,T))
 
 
 def get_W(T: int, random_state: Optional[int] = None) -> np.ndarray:
